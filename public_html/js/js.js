@@ -13,11 +13,13 @@ function colapsarMenu(a) {
         reo[i].classList.toggle("c");
     }
     var nav = document.getElementById("nav");
-    var cont = document.getElementById("contenido");
+    var btn = document.getElementById("menuBtn");
     var foot = document.getElementById("footer");
     nav.classList.toggle("col-3");
     foot.classList.toggle("col-11");
     foot.classList.toggle("col-9");
+    btn.classList.toggle("fa-outdent");
+    btn.classList.toggle("fa-indent");
 //WEB STORAGE
 //guarda la posicion para la sesion actual
     if (c === 1) {
@@ -48,6 +50,8 @@ $(window).resize(function () {
         $("#menuBtn").addClass("fa-medium");
     } else {
         $("#menuBtn").removeClass("fa-medium");
-        $("#menuBtn").addClass("fa-outdent");
+        if (sessionStorage.getItem("menu") === "colapsado"){
+            $("#menuBtn").addClass("fa-indent");
+        }
     }
 });
