@@ -46,12 +46,18 @@ function dropdown(a) {
 $(window).resize(function () {
     var viewportWidth = $(window).width();
     if (viewportWidth < 784) {
-        $("#menuBtn").removeClass("fa-outdent");
+        if(sessionStorage.getItem("menu") !== "colapsado"){
+            $("#menuBtn").removeClass("fa-outdent");
+        } else {
+            $("#menuBtn").removeClass("fa-indent");
+        }
         $("#menuBtn").addClass("fa-medium");
     } else {
         $("#menuBtn").removeClass("fa-medium");
         if (sessionStorage.getItem("menu") === "colapsado"){
             $("#menuBtn").addClass("fa-indent");
+        } else {
+            $("#menuBtn").addClass("fa-outdent");
         }
     }
 });
