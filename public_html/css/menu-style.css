@@ -127,6 +127,10 @@ div.footer {
     div.footer {
         float: right;
     }
+    div.footer.col-m-11{
+        width: 75%;
+        float: left;
+    }
 }
 @media only screen and (min-width: 800px) {
     /* Tamaño Normal: */
